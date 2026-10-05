@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta name="description" content="Objectif Bac &amp; Parcoursup — fiches de révision Première et Terminale, comparateur de formations gratuit et carnet Parcoursup." />
+<meta name="description" content="Fiches de révision du bac et carnet Parcoursup avec comparateur gratuit." />
 <title>Objectif Bac &amp; Parcoursup — Révise, choisis, candidate</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Crect width=%27100%27 height=%27100%27 rx=%2722%27 fill=%27%230f2347%27/%3E%3Ctext x=%2750%27 y=%2772%27 font-size=%2770%27 text-anchor=%27middle%27 fill=%27%23ffc933%27 font-family=%27Arial%27 font-weight=%27800%27%3EO%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,95 +12,16 @@
 <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-<header class="nav">
-  <a class="brand" href="#top">Objectif <span>Bac &amp; Parcoursup</span></a>
-  <nav><a href="#bac">Fiches bac</a><a href="#comparateur">Comparateur</a><a href="#parcoursup">Carnet Parcoursup</a><a href="#faq">FAQ</a></nav>
-  <a class="nav-cta" href="#bac">Voir les fiches</a>
-</header>
-<main id="top">
-  <section class="hero2">
-    <div class="eyebrow">LE BAC ET PARCOURSUP, AU MÊME ENDROIT</div>
-    <h1>Réussis ton bac.<br><span>Prépare la suite.</span></h1>
-    <p class="lead">Des fiches de révision pour Première et Terminale, un comparateur gratuit des formations avec les chiffres officiels, et un carnet pour organiser ta candidature Parcoursup.</p>
-    <div class="paths">
-      <a class="path bac" href="#bac"><span class="meta" id="bacStatus">Ouverture prochaine</span><h2>Fiches de révision</h2><p>26 fiches détaillées, Première et Terminale. 2 € la matière, ou le pack philo + 2 spés à 5 €.</p><span class="btn primary">Voir les fiches</span></a>
-      <a class="path pcs" href="#parcoursup"><span class="meta">5,90 €</span><h2>Carnet Parcoursup</h2><p>31 pages pour organiser tes vœux, ton dossier et tes projets motivés. PDF immédiat.</p><span class="btn primary">Voir le carnet</span></a>
-    </div>
-    <div class="jsteps">
-      <div><b>1</b><h3>Réviser</h3><p>Des fiches claires pour chaque matière du bac.</p><a href="#bac">Les fiches →</a></div>
-      <div><b>2</b><h3>Choisir</h3><p>Compare des formations avec les données publiques. Gratuit.</p><a href="#comparateur">Le comparateur →</a></div>
-      <div><b>3</b><h3>Candidater</h3><p>Organise vœux, dossier et lettres de motivation.</p><a href="#parcoursup">Le carnet →</a></div>
-    </div>
-  </section>
-
-  <section id="bac" class="section zone-bac">
-    <div class="section-head"><div><span class="section-kicker">FICHES DE RÉVISION</span><h2>Une fiche par matière, 2 € chacune.</h2></div><p>Cours résumé, méthodes, erreurs fréquentes et exercices types. Les fiches sont des supports de révision, à compléter avec ton cours.</p></div>
-    <div id="bnotice" class="bnotice"><div>Les fiches ouvrent bientôt à l'achat. <a id="bwaitlist" href="#" target="_blank" rel="noopener" hidden>Préviens-moi à l'ouverture</a></div></div>
-    <h3 class="subhead">Packs</h3>
-    <div id="bpacks"></div>
-    <h3 class="subhead">Catalogue</h3>
-    <input id="bq" type="search" placeholder="Cherche une matière…" aria-label="Rechercher une matière" autocomplete="off" />
-    <div id="blchips" class="bchips"></div>
-    <div id="bchips" class="bchips"></div>
-    <p id="bcount" class="hint" aria-live="polite"></p>
-    <div id="bgrid"></div>
-  </section>
-
-  <section id="comparateur" class="comparator section">
-      <div class="section-head"><div><span class="section-kicker">OUTIL GRATUIT</span><h2>Compare des formations avec les chiffres officiels.</h2></div><p>Ajoute jusqu'à 4 formations : places, vœux, taux d'accès, profil des admis. Tu peux ensuite ajouter ta propre note. Aucun classement : seulement des données publiques.</p></div>
-      <div class="compare-box">
-        <div class="search-row">
-          <input id="q" type="search" placeholder="Cherche une formation, un établissement ou une ville — ex. BUT informatique Lyon" autocomplete="off" aria-label="Rechercher une formation" />
-          <button class="btn primary" id="qBtn" type="button">Chercher</button>
-        </div>
-        <p id="qStatus" class="hint" aria-live="polite">Données officielles Parcoursup (open data du ministère). Ajoute jusqu'à 4 formations.</p>
-        <p class="hint">Exemples : <button type="button" class="chip" data-q="BUT informatique">BUT informatique</button> <button type="button" class="chip" data-q="Licence droit">Licence droit</button> <button type="button" class="chip" data-q="PASS">PASS</button> <button type="button" class="chip" data-q="CPGE MPSI">CPGE MPSI</button></p>
-        <ul id="qResults" class="q-results"></ul>
-        <form id="manualForm" class="manual"><input id="manualName" placeholder="Une formation introuvable ? Ajoute-la à la main" aria-label="Ajouter une formation manuellement" /><button class="btn secondary" type="submit">Ajouter</button></form>
-        <div class="tabs" role="tablist"><button type="button" role="tab" id="tabOff" aria-selected="true">Chiffres officiels</button><button type="button" role="tab" id="tabPerso" aria-selected="false">Ma note perso</button></div>
-        <div id="officialResult" class="table-wrap" aria-live="polite"></div>
-        <div id="compareResult" class="compare-grid" aria-live="polite" hidden></div>
-        <p class="hint">L'onglet « Chiffres officiels » compare uniquement des données publiques, sans opinion. L'onglet « Ma note perso » te laisse noter de 1 à 5 tes propres critères. Les chiffres officiels datent de la dernière campagne publiée et peuvent évoluer : vérifie toujours la fiche sur parcoursup.gouv.fr.</p>
-      </div>
-    </section>
-
-  <section id="parcoursup" class="content section">
-    <div class="section-head"><div><span class="section-kicker">CARNET PARCOURSUP</span><h2>Tout rassembler au même endroit.</h2></div><p>Le carnet t'aide à poser les bonnes questions et à avancer étape par étape, sans décider à ta place.</p></div>
-    <div class="feature-grid">
-        <article><div class="num">01</div><h3>Mon dossier</h3><p>Checklist des pièces et des éléments à préparer pour ne rien oublier.</p></article>
-        <article><div class="num">02</div><h3>Mes vœux</h3><p>Tableau pour suivre formations, villes, dates, statut et notes personnelles.</p></article>
-        <article><div class="num">03</div><h3>Mes recherches</h3><p>Questions à poser aux professeurs, étudiants, responsables et lors des JPO.</p></article>
-        <article><div class="num">04</div><h3>Mon projet motivé</h3><p>Un outil pour construire une lettre cohérente et l'adapter à chaque formation.</p></article>
-        <article><div class="num">05</div><h3>Ma décision</h3><p>Critères, hésitations, plan B et prochaines actions pour décider plus calmement.</p></article>
-        <article><div class="num">06</div><h3>Et après ?</h3><p>Une conclusion simple pour garder le cap sans chercher à tout régler en une journée.</p></article>
-      </div>
-    <div class="preview-grid" style="margin-top:34px">
-      <img src="assets/preview-steps.png" alt="Aperçu des étapes Parcoursup" loading="lazy" />
-      <img src="assets/preview-voeux.png" alt="Aperçu de la page Mes vœux" loading="lazy" />
-    </div>
-  </section>
-
-  <section id="acheter" class="buy section">
-    <div class="buy-card">
-      <div><span class="section-kicker">LE CARNET COMPLET</span><h2>Objectif Parcoursup</h2><p class="buy-sub">Le planner de ta candidature, sans stress.</p><ul><li>31 pages prêtes à remplir</li><li>Organisation des étapes et du dossier</li><li>Suivi et comparaison des vœux</li><li>Questions pour les JPO et rencontres</li><li>Outil pour construire un projet motivé précis</li><li>Pages de décision et plan B</li></ul></div>
-      <div class="price"><div><span>Prix de lancement</span><strong>5,90 €</strong></div><a class="btn primary big" href="https://buy.stripe.com/4gM00jh0t4Qf3sW8htg3600" target="_blank" rel="noopener">Acheter maintenant</a><small>Paiement sécurisé par Stripe. PDF disponible immédiatement après l'achat.</small></div>
-    </div>
-    <p class="independent">Documents indépendants, non affiliés à Parcoursup, au ministère de l'Enseignement supérieur ni à l'Éducation nationale. Dates et règles à vérifier sur <strong>parcoursup.gouv.fr</strong>.</p>
-  </section>
-
-  <section id="faq" class="faq section">
-    <div class="section-head"><div><span class="section-kicker">FAQ</span><h2>Les questions essentielles.</h2></div></div>
-    <details><summary>Est-ce un site officiel ?</summary><p>Non. Objectif Bac &amp; Parcoursup est indépendant : pas d'affiliation avec Parcoursup, le ministère ou l'Éducation nationale.</p></details>
-    <details><summary>Les fiches remplacent-elles mon cours ?</summary><p>Non. Ce sont des résumés de révision. Vérifie toujours les points importants avec ton cours et le programme officiel.</p></details>
-    <details><summary>Quelle différence entre fiche et pack ?</summary><p>Une fiche = une matière (2 €). Le pack à 5 € donne la philosophie et 2 spécialités au choix.</p></details>
-    <details><summary>Comment je reçois mes PDF ?</summary><p>Juste après le paiement, tu arrives sur une page de téléchargement. Le reçu Stripe est envoyé par e-mail.</p></details>
-    <details><summary>D'où viennent les chiffres du comparateur ?</summary><p>Des données ouvertes officielles de Parcoursup (ministère). Elles datent de la dernière campagne publiée : vérifie la fiche sur parcoursup.gouv.fr.</p></details>
-    <details><summary>Le carnet est-il un calendrier officiel ?</summary><p>Non. Il sert à t'organiser ; dates et règles sont à vérifier sur parcoursup.gouv.fr.</p></details>
-  </section>
-</main>
+<div class="sitebar"><div class="in"><span>Objectif Bac &amp; Parcoursup</span><nav><a href="index.html" class="on" aria-current="page">Accueil</a><a href="bac.html">Bac</a><a href="parcoursup.html">Parcoursup</a></nav></div></div>
+<main id="top"><section class="hero2"><div class="eyebrow">LE BAC ET PARCOURSUP, AU MÊME ENDROIT</div><h1>Réussis ton bac.<br><span>Prépare la suite.</span></h1><p class="lead">Des fiches de révision pour Première et Terminale, et un carnet avec comparateur gratuit pour organiser ta candidature Parcoursup.</p>
+<div class="paths">
+<a class="path bac" href="bac.html"><span class="meta" id="bacStatus">Ouverture prochaine</span><h2>Bac</h2><p>28 fiches détaillées, Première et Terminale, dont le bac anticipé de maths et les astuces pour l'oral de français. 2 € la matière, pack à 5 €.</p><span class="btn primary">Aller aux fiches bac</span></a>
+<a class="path pcs" href="parcoursup.html"><span class="meta">Carnet bientôt disponible · comparateur gratuit</span><h2>Parcoursup</h2><p>Un carnet de 31 pages pour organiser tes vœux, ton dossier et tes projets motivés, plus un comparateur de formations gratuit. Le carnet sera disponible prochainement.</p><span class="btn primary">Aller à Parcoursup</span></a>
+</div>
+<div class="jsteps"><div><b>1</b><h3>Réviser</h3><p>Des fiches claires pour chaque matière du bac.</p><a href="bac.html">Les fiches →</a></div><div><b>2</b><h3>Choisir</h3><p>Compare des formations avec les données publiques. Gratuit.</p><a href="parcoursup.html#comparateur">Le comparateur →</a></div><div><b>3</b><h3>Candidater</h3><p>Organise vœux, dossier et lettres de motivation.</p><span class="soon" style="opacity:.7">Carnet bientôt disponible</span></div></div>
+<p class="independent" style="margin-top:28px">Documents indépendants, non affiliés à Parcoursup, au ministère de l'Enseignement supérieur ni à l'Éducation nationale.</p></section></main>
 <footer><div class="brand">Objectif <span>Bac &amp; Parcoursup</span></div><p>Réviser, choisir, candidater.</p><p>© 2026 — Produits indépendants.</p><p class="legal"><a href="mentions-legales.html">Mentions légales</a> · <a href="cgv.html">CGV</a> · <a href="confidentialite.html">Confidentialité</a></p></footer>
 <script src="config.js"></script>
-<script src="fiches.js"></script>
-<script src="compare.js"></script>
+<script>var S=window.SITE,st=document.getElementById("bacStatus");if(st)st.textContent=S.SALES_OPEN?"Disponible maintenant":"Ouverture prochaine";</script>
 </body>
 </html>

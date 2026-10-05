@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /merci.html
+Disallow: /merci-bac.html
+Disallow: /fiches/
+Disallow: /objectif-parcoursup.pdf
